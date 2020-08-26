@@ -1,4 +1,4 @@
-# Wechat-thumbsup
+# WeChat-ThumbsUp
 
 ## 微信自动点赞
 
