@@ -56,9 +56,10 @@ def click_like(y):
 
 def swipe_up(y):
     print("Swipe up by {0}".format(y))
-    os.system("adb shell input swipe {0} {1} {2} {3} 5000".format(SCREEN_RESOLUTION_X / 2, SWIPE_UP_BOTTOM,
-                                                                  SCREEN_RESOLUTION_X / 2,
-                                                                  SWIPE_UP_BOTTOM - y + SWIPE_UP_TOP))
+    os.system("adb shell input swipe {0} {1} {2} {3} {4}".format(SCREEN_RESOLUTION_X / 2, SWIPE_UP_BOTTOM,
+                                                                 SCREEN_RESOLUTION_X / 2,
+                                                                 SWIPE_UP_BOTTOM - y + SWIPE_UP_TOP,
+                                                                 (SWIPE_UP_BOTTOM - y + SWIPE_UP_TOP) * 3))
 
 
 def main():
