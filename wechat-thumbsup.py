@@ -59,7 +59,7 @@ def swipe_up(y):
     os.system("adb shell input swipe {0} {1} {2} {3} {4}".format(SCREEN_RESOLUTION_X / 2, SWIPE_UP_BOTTOM,
                                                                  SCREEN_RESOLUTION_X / 2,
                                                                  SWIPE_UP_BOTTOM - y + SWIPE_UP_TOP,
-                                                                 (SWIPE_UP_BOTTOM - y + SWIPE_UP_TOP) * 2))
+                                                                 (y - SWIPE_UP_TOP) * 2))
 
 
 def main():
