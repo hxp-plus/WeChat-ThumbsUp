@@ -40,7 +40,7 @@ def get_two_dots_button_y():
 def click_like(y):
     os.system("adb shell input tap {0} {1}".format(TWO_DOTS_BUTTON_X, y))
     print("Clicked the two dots button, y={0}".format(y))
-    time.sleep(2)
+    time.sleep(1)
     get_current_screen()
     img = Image.open("./wechat-thumbsup.png")
     px = img.convert('RGB')
@@ -56,9 +56,10 @@ def click_like(y):
 
 def swipe_up(y):
     print("Swipe up by {0}".format(y))
-    os.system("adb shell input swipe {0} {1} {2} {3} 5000".format(SCREEN_RESOLUTION_X / 2, SWIPE_UP_BOTTOM,
-                                                                  SCREEN_RESOLUTION_X / 2,
-                                                                  SWIPE_UP_BOTTOM - y + SWIPE_UP_TOP))
+    os.system("adb shell input swipe {0} {1} {2} {3} {4}".format(SCREEN_RESOLUTION_X / 2, SWIPE_UP_BOTTOM,
+                                                                 SCREEN_RESOLUTION_X / 2,
+                                                                 SWIPE_UP_BOTTOM - y + SWIPE_UP_TOP,
+                                                                 (SWIPE_UP_BOTTOM - y + SWIPE_UP_TOP) * 2))
 
 
 def main():
