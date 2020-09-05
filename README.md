@@ -1,6 +1,6 @@
 # QZone-ThumbsUp
 
-## 微信自动点赞
+## QQ空间自动点赞
 
 需要ADB和Pillow来运行
 
