@@ -38,7 +38,7 @@ def get_like_button_y():
 
 
 def click_like(y):
-    for i in range(randint(3, 5)):
+    for i in range(100):
         os.system("adb shell input tap {0} {1}".format(LIKE_BUTTON_X, y))
     print("Clicked the like button 99 times, y={0}".format(y))
     time.sleep(1)
