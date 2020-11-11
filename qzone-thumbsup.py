@@ -8,7 +8,7 @@ SCREEN_RESOLUTION_X = 1080  # 屏幕分辨率X
 SCREEN_RESOLUTION_Y = 2244  # 屏幕分辨率Y
 SWIPE_UP_BOTTOM = 2000  # 向上滑动时的起始坐标，如果从太地下开始向上滑，手势操作会退出微信
 SWIPE_UP_TOP = 150  # 微信“朋友圈”标题的最底下的位置
-LIKE_BUTTON_X = 759  # 点赞前先要点的那个两个点图标中第一个点的位置
+LIKE_BUTTON_X = 647  # 点赞前先要点的那个两个点图标中第一个点的位置
 LIKE_BUTTON_RGB = [141, 141, 147]  # 点赞前先要点的那个两个点图标中第一个点的RGB值
 
 
@@ -31,16 +31,16 @@ def get_like_button_y():
     px = img.convert('RGB')
     for y in range(0, SCREEN_RESOLUTION_Y):
         current_pixel = px.getpixel((LIKE_BUTTON_X, y))
-        if is_pixel_same(current_pixel, LIKE_BUTTON_RGB):
+        current_pixel_2 = px.getpixel((1044, y))
+        if is_pixel_same(current_pixel, LIKE_BUTTON_RGB) and is_pixel_same(current_pixel_2, LIKE_BUTTON_RGB):
             return y
     swipe_up(int(SCREEN_RESOLUTION_Y / 2))
     return get_like_button_y()
 
 
 def click_like(y):
-    for i in range(100):
-        os.system("adb shell input tap {0} {1}".format(LIKE_BUTTON_X, y))
-    print("Clicked the like button 99 times, y={0}".format(y))
+    os.system("adb shell input tap {0} {1}".format(LIKE_BUTTON_X, y))
+    print("Clicked the like button, y={0}".format(y))
     time.sleep(1)
     get_current_screen()
 
