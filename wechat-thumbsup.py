@@ -7,9 +7,9 @@ SCREEN_RESOLUTION_X = 1080  # 屏幕分辨率X
 SCREEN_RESOLUTION_Y = 2244  # 屏幕分辨率Y
 SWIPE_UP_BOTTOM = 2000  # 向上滑动时的起始坐标，如果从太地下开始向上滑，手势操作会退出微信
 SWIPE_UP_TOP = 150  # 微信“朋友圈”标题的最底下的位置
-TWO_DOTS_BUTTON_X = 1005  # 点赞前先要点的那个两个点图标中第一个点的位置
+TWO_DOTS_BUTTON_X = 993  # 点赞前先要点的那个两个点图标中第一个点的位置
 TWO_DOTS_BUTTON_RGB = [95, 116, 158]  # 点赞前先要点的那个两个点图标中第一个点的RGB值
-HEART_POSITION_UNLIKED_X = 550  # “赞”左边那个心形图标的最左边的和两个点图标中点相同Y坐标的点的X坐标
+HEART_POSITION_UNLIKED_X = 467  # “取消赞”左边那个心形图标的最左边的和两个点图标中点相同Y坐标的点的X坐标
 HEART_POSITION_UNLIKED_RGB = [64, 64, 64]  # 没有被赞时上面那个点的RGB值
 
 

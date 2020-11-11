@@ -10,6 +10,7 @@ SWIPE_UP_BOTTOM = 2000  # 向上滑动时的起始坐标，如果从太地下开
 SWIPE_UP_TOP = 150  # 微信“朋友圈”标题的最底下的位置
 LIKE_BUTTON_X = 647  # 点赞前先要点的那个两个点图标中第一个点的位置
 LIKE_BUTTON_RGB = [141, 141, 147]  # 点赞前先要点的那个两个点图标中第一个点的RGB值
+SHARE_BUTTON_X = 1044 # 分享按钮的X，用于验证按钮是点赞按钮
 
 
 def is_pixel_same(pixel_a, pixel_b):
@@ -31,7 +32,7 @@ def get_like_button_y():
     px = img.convert('RGB')
     for y in range(0, SCREEN_RESOLUTION_Y):
         current_pixel = px.getpixel((LIKE_BUTTON_X, y))
-        current_pixel_2 = px.getpixel((1044, y))
+        current_pixel_2 = px.getpixel((SHARE_BUTTON_X, y))
         if is_pixel_same(current_pixel, LIKE_BUTTON_RGB) and is_pixel_same(current_pixel_2, LIKE_BUTTON_RGB):
             return y
     swipe_up(int(SCREEN_RESOLUTION_Y / 2))
