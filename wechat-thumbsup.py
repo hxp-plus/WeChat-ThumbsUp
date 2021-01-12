@@ -21,7 +21,7 @@ def is_pixel_same(pixel_a, pixel_b):
 
 
 def get_current_screen():
-    time.sleep(1)
+    time.sleep(0.5)
     os.system("adb shell screencap -p /sdcard/wechat-thumbsup.png")
     os.system("adb pull /sdcard/wechat-thumbsup.png ./wechat-thumbsup.png")
 
@@ -39,23 +39,23 @@ def get_two_dots_button_y():
 
 def click_like(y):
     os.system("adb shell input tap {0} {1}".format(TWO_DOTS_BUTTON_X, y))
-    print("Clicked the two dots button, y={0}".format(y))
-    time.sleep(1)
+    # print("Clicked the two dots button, y={0}".format(y))
+    # time.sleep(1)
     get_current_screen()
     img = Image.open("./wechat-thumbsup.png")
     px = img.convert('RGB')
     like_pixel = px.getpixel((HEART_POSITION_UNLIKED_X, y))
-    print(like_pixel)
+    # print(like_pixel)
     if is_pixel_same(like_pixel, HEART_POSITION_UNLIKED_RGB):
         os.system("adb shell input tap {0} {1}".format(HEART_POSITION_UNLIKED_X, y))
-        print("Thumbed Up")
+        # print("Thumbed Up")
     else:
         os.system("adb shell input tap {0} {1}".format(TWO_DOTS_BUTTON_X, y))
-        print("This moment is liked")
+        # print("This moment is liked")
 
 
 def swipe_up(y):
-    print("Swipe up by {0}".format(y))
+    # print("Swipe up by {0}".format(y))
     os.system("adb shell input swipe {0} {1} {2} {3} {4}".format(SCREEN_RESOLUTION_X / 2, SWIPE_UP_BOTTOM,
                                                                  SCREEN_RESOLUTION_X / 2,
                                                                  SWIPE_UP_BOTTOM - y + SWIPE_UP_TOP,
